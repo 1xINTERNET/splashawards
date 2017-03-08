@@ -1,0 +1,185 @@
+<?php
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+/**
+ * Enriches the variable-array with information for the theme-specific templates of type judge.
+ *
+ * @param array $variables
+ * @return array
+ */
+function _splashawards_preprocess_judge_node($variables) {
+    /** @var \Drupal\file\Plugin\Field\FieldType\FileItem $judgePhotoFileItem */
+    $judgePhotoFileItem = $variables['node']->field_judge_photo->offsetGet(0);
+    /** @var \Drupal\file\Entity\File $judgePhotoFile */
+    $judgePhotoFile = $judgePhotoFileItem->view()["#file"];
+    /** @var string $judgePhotoUrl */
+    $judgePhotoUrl =  file_create_url($judgePhotoFile->getFileUri());
+
+    /** @var \Drupal\Core\Field\Plugin\Field\FieldType\StringItem $judgeCompanyPositionItem */
+    $judgeCompanyPositionItem = $variables['node']->field_judge_company_position->offsetGet(0);
+    /** @var string $judgeCompanyPosition */
+    $judgeCompanyPosition = is_null($judgeCompanyPositionItem) ? '' : $judgeCompanyPositionItem->getString();
+
+    /** @var \Drupal\Core\Field\Plugin\Field\FieldType\StringItem $judgeNameItem */
+    $judgeNameItem = $variables['node']->title->offsetGet(0);
+    /** @var string $judgeCompanyPosition */
+    $judgeName = is_null($judgeNameItem) ? '' : $judgeNameItem->getString();
+
+
+    if (!(array_key_exists('splashawards_start', $variables) && is_array($variables['splashawards_start']))) {
+        $variables['splashawards_start'] = [];
+    }
+
+    $variables['splashawards']['judge'] = [
+        'judgeCompanyPosition' => $judgeCompanyPosition,
+        'judgeName' => $judgeName,
+        'judgePhotoUrl' => $judgePhotoUrl
+    ];
+
+    return $variables;
+}
+
+/**
+ * @param array $variables
+ * @return array
+ */
+function _splashawards_preprocess_nomination_node($variables) {
+    /** @var \Drupal\image\Plugin\Field\FieldType\ImageItem $customerLogo */
+    $customerLogo = $variables['node']->field_customer_logo->offsetGet(0);
+    $logoViewArray = $customerLogo->view();
+    /** @var \Drupal\image\Plugin\Field\FieldType\ImageItem $customerLogoImage */
+    $customerLogoImage = $logoViewArray['#item'];
+    /** @var \Drupal\Core\TypedData\Plugin\DataType\IntegerData $customerLogoImageID */
+    $customerLogoImageID = $customerLogoImage->get('target_id');
+    /** @var \Drupal\Core\TypedData\Plugin\DataType\StringData $customerLogoAltText */
+    $customerLogoAltText = $customerLogoImage->get('alt');
+    /** @var \Drupal\file\Entity\File $customerLogoFile */
+    $customerLogoFile = \Drupal\file\Entity\File::load($customerLogoImageID->getCastedValue());
+
+    /** @var \Drupal\link\Plugin\Field\FieldType\LinkItem $projectLink */
+    $projectLink = $variables['node']->field_link_to_project->offsetGet(0);
+
+    /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $nominationCategoryItem */
+    $nominationCategoryItem = $variables['node']->field_nomination_category->offsetGet(0);
+    /** @var \Drupal\Core\Entity\Plugin\DataType\EntityReference $entityReference */
+    $entityReference = $nominationCategoryItem->get('entity');
+
+    /** @var \Drupal\Core\Field\Plugin\Field\FieldType\StringItem $projectName */
+    $projectName = $variables['node']->field_projectname->offsetGet(0);
+
+    /** @var \Drupal\text\Plugin\Field\FieldType\TextWithSummaryItem $body */
+    $body = $variables['node']->body->offsetGet(0);
+    $bodyValue = $body->getValue();//if this does not work use $body->value
+
+    $screenshots = array();
+    /** @var \Drupal\image\Plugin\Field\FieldType\ImageItem $screenshot */
+    foreach($variables['node']->field_website_screenshots as $screenshot) {
+        $screenshotArrayView = $screenshot->view();
+        /** @var \Drupal\image\Plugin\Field\FieldType\ImageItem $screenshotImage */
+        $screenshotImage = $screenshotArrayView['#item'];
+        /** @var \Drupal\Core\TypedData\Plugin\DataType\IntegerData $screenshotImageID */
+        $screenshotImageID = $screenshotImage->get('target_id');
+        /** @var \Drupal\file\Entity\File $customerLogoFile */
+        $screenshotFile = \Drupal\file\Entity\File::load($screenshotImageID->getCastedValue());
+
+        /** @var \Drupal\Core\TypedData\Plugin\DataType\StringData $alt */
+        $alt = $screenshotImage->get('alt');
+
+        $screenshots[] = array(
+            'url' => file_create_url($screenshotFile->getFileUri()),
+            'alt' => $alt->getString()
+        );
+    }
+
+    $renderData = array(
+        'bodyFull' => $bodyValue['value'],
+        'summary' => $bodyValue['summary'],
+        'nominationCategory' => $entityReference->getString(),
+        'customerLogoUrl' => file_create_url($customerLogoFile->getFileUri()),
+        'customerLogoAlt' => $customerLogoAltText->getString(),
+        'projectLink' => file_create_url($projectLink->getUrl()->getUri()),
+        'projectName' => $projectName->getString(),
+        'screenshots' => $screenshots
+    );
+
+    if (!(array_key_exists('splashawards', $variables) && is_array($variables['splashawards']))) {
+        $variables['splashawards'] = array();
+    }
+
+    $variables['splashawards']['nomination'] = $renderData;
+
+    return $variables;
+}
+
+
+/**
+ * Enriches the variable-array with information for the theme-specific templates of type sponsor.
+ *
+ * @param array $variables
+ * @return array
+ */
+function _splashawards_preprocess_sponsor_node($variables) {
+    /** @var \Drupal\link\Plugin\Field\FieldType\LinkItem $linkItem */
+    $linkItem = $variables['node']->field_link_to_sponsor_page->offsetGet(0);
+    /** @var string $rawLink */
+    $rawLink = $linkItem->getUrl()->getUri();
+    /** @var string $linkAltText */
+    $linkAltText = $linkItem->getValue()['title'];
+
+    /** @var \Drupal\file\Plugin\Field\FieldType\FileItem $logoFileItem */
+    $logoFileItem = $variables['node']->field_sponsor_logo->offsetGet(0);
+    $logoFileArray = $logoFileItem->view();
+    /** @var \Drupal\file\Entity\File $logoFile */
+    $logoFile = $logoFileArray["#file"];
+    /** @var string $logoURL */
+    $logoURL =  file_create_url($logoFile->getFileUri());
+
+    /** @var \Drupal\Core\Field\Plugin\Field\FieldType\StringItem $loglAltTextItem */
+    $loglAltTextItem = $variables['node']->field_sponsor_logo_alt_text->offsetGet(0);
+    /** @var string $logoAltText */
+    $logoAltText = is_null($loglAltTextItem) ? '' : $loglAltTextItem->getString();
+
+    if (!(array_key_exists('splashawards', $variables) && is_array($variables['splashawards']))) {
+        $variables['splashawards'] = array();
+    }
+
+    $variables['splashawards']['sponsor'] = array(
+        'sponsorHomepageLink' => $rawLink,
+        'linkAltText' => $linkAltText,
+        'sponsorLogoLink' => $logoURL,
+        'logoAltText' => $logoAltText
+    );
+
+    return $variables;
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function splashawards_preprocess_node(&$variables) {
+    // Remove the "Add new comment" link on teasers or when the comment form is
+    // displayed on the page.
+    $nodeType = $variables['node']->getType() ;
+    if ($nodeType == 'sponsor') {
+        $variables = _splashawards_preprocess_sponsor_node($variables);
+    }
+
+    if ($nodeType == 'judge') {
+        $variables = _splashawards_preprocess_judge_node($variables);
+    }
+
+    if ($nodeType == 'nomination') {
+        $variables = _splashawards_preprocess_nomination_node($variables);
+    }
+
+    if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
+        unset($variables['content']['links']['comment']['#links']['comment-add']);
+    }
+}
+

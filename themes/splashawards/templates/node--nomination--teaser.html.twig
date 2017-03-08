@@ -72,15 +72,20 @@
  * @ingroup themeable
  */
 #}
-<article{{ attributes }}>
-  <div{{ content_attributes }}>
-    Eingereicht durch:<br>
-    {{ content.field_customer_logo }}
-    Projectname:<br>
-    <h2>  {{ content.field_projectname }}</h2>
-      {{ content.field_link_to_project }}
-      {{ content.field_nomination_category }}
-      {{ content.field_website_screenshot }}
-      {{ content.body }}
-  </div>
+<article data-nomination-category="{{ splashawards.nomination.category }}" class="nomination-teaser">
+    <div{{ content_attributes }}>
+        <h4>{{ splashawards.nomination.title }}</h4>
+        <h5>{{ splashawards.nomination.subTitle }}</h5>
+        <ul class="nomination-screenshots-slider">
+            {% for screenshot in splashawards.nomination.teaserScreenshots %}
+                <li>
+                    <img alt="{{ screenshot.alt }}" src="{{ screenshot.src }}">
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="nomination-teaser-text">
+            {{ splashawards.nomination.teaserText|raw }}<br>
+            {{ splashawards.nomination.readMoreLink|raw }}
+        </div>
+    </div>
 </article>

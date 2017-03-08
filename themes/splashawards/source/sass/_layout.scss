@@ -33,10 +33,11 @@ div#page {
         display: inline-block;
         border-radius: 4px;
 
-        a, a:visited,a:hover {
+        a, a:visited, a:hover, a:focus{
           color: #fefefe;
           padding: 3px;
           border-radius: 4px;
+          background-color: transparent;
         }
         a:hover {
           background-color: #48A3A6;

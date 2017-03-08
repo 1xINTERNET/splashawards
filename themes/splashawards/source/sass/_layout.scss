@@ -14,9 +14,36 @@ div#page {
   background: transparent;
 }
 
-div.main-container {
-  margin-left: 0;
-  margin-right: 0;
+.navbar {
+  background-color: transparent;
+  border: none;
+
+  #block-splashawardsmenu-2 {
+    font-weight:bolder;
+    ul {
+      list-style: none;
+      display: inline-block;
+      transform: translateX(-50%);
+      left: 50%;
+      position: relative;
+      
+      li {
+        margin-right: 4px;
+        margin-top: 4px;
+        display: inline-block;
+        border-radius: 4px;
+
+        a, a:visited,a:hover {
+          color: #fefefe;
+          padding: 3px;
+          border-radius: 4px;
+        }
+        a:hover {
+          background-color: #48A3A6;
+        }
+      }
+    }
+  }
 }
 
 .nomination-teaser {

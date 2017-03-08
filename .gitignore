@@ -1,2 +1,5 @@
+db.sql
+*.tar.gz
+*.log
 .idea/
 .vagrant/

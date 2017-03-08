@@ -14,9 +14,65 @@ div#page {
   background: transparent;
 }
 
-div.main-container {
-  margin-left: 0;
-  margin-right: 0;
+.navbar {
+  background-color: transparent;
+  border: none;
+
+  #block-splashawardsmenu-2 {
+    font-weight:bolder;
+    ul {
+      list-style: none;
+      display: inline-block;
+      transform: translateX(-50%);
+      left: 50%;
+      position: relative;
+      
+      li {
+        margin-right: 4px;
+        margin-top: 4px;
+        display: inline-block;
+        border-radius: 4px;
+
+        a, a:visited, a:hover, a:focus{
+          color: #fefefe;
+          padding: 3px;
+          border-radius: 4px;
+          background-color: transparent;
+        }
+        a:hover {
+          background-color: #48A3A6;
+        }
+      }
+    }
+  }
+}
+
+.nomination-teaser {
+  width: 250px;
+  margin-left: auto;
+  margin-right:auto;
+  border-radius: 3px;
+  background-color: #fefefe;
+  padding: 4px;
+
+  h4, h5, .nomination-teaser-text{
+    text-align: center;
+  }
+
+ .nomination-screenshots-slider {
+   width: 110px;
+   margin-left: auto;
+   margin-right: auto;
+
+   ul {
+     list-style: none;
+   }
+
+   img {
+     max-width: 100px;
+     max-height: 350px;
+   }
+ }
 }
 
 .jury-list {
@@ -25,9 +81,11 @@ div.main-container {
   .judge-photo {
     width: 124px;
   }
+
   .judge-name {
     font-weight: bolder;
   }
+
   .judge-details {
     display: inline-block;
   }

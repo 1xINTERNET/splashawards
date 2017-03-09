@@ -1,0 +1,29 @@
+.path-frontpage header {
+  background-image: url(../../images/bg-splash-dark-comp.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 70vh; 
+  color: $xi-white;
+}
+.logo {
+  float: none !important;
+  img {
+    width: 70%;
+    height: auto;
+  }
+}
+
+.header-logo {
+  display: inline-block;
+}
+
+.section-highlighted {
+  margin-top: $grid-gutter-width*2;
+  .row {
+    @include larger-than($screen-sm) {
+      display: flex; 
+      align-items: center;
+    }
+  }
+}

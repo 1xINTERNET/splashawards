@@ -1,9 +1,4 @@
-.logo img {
-  min-width: 100px;
-  max-width: 162px;
-}
-
-#page,
+/* #page,
 #main-wrapper,
 .region-primary-menu .menu-item a.is-active,
 .region-primary-menu .menu-item--active-trail a,
@@ -12,40 +7,8 @@ main#content,
 header#header,
 div#page {
   background: transparent;
-}
+} */
 
-.navbar {
-  background-color: transparent;
-  border: none;
-
-  #block-splashawardsmenu-2 {
-    font-weight:bolder;
-    ul {
-      list-style: none;
-      display: inline-block;
-      transform: translateX(-50%);
-      left: 50%;
-      position: relative;
-      
-      li {
-        margin-right: 4px;
-        margin-top: 4px;
-        display: inline-block;
-        border-radius: 4px;
-
-        a, a:visited, a:hover, a:focus{
-          color: #fefefe;
-          padding: 3px;
-          border-radius: 4px;
-          background-color: transparent;
-        }
-        a:hover {
-          background-color: #48A3A6;
-        }
-      }
-    }
-  }
-}
 
 .nomination-teaser {
   width: 250px;
@@ -93,11 +56,4 @@ div#page {
   article {
     margin-bottom: 10px;
   }
-}
-
-body {
-  background-image: url(../../images/bg-splash-dark-comp.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 }

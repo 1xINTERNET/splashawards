@@ -1,0 +1,33 @@
+.navbar-main, 
+.navbar {
+  background-color: transparent;
+  border: none;
+  nav {
+    font-weight:bolder;
+    padding-top: $line-height-computed; 
+    text-transform: uppercase;
+      list-style: none;   
+      li {
+        display: inline-block;
+        border-radius: 4px;
+        margin-left: $grid-gutter-width/6; 
+        a, a:visited, a:hover, a:focus{
+          color: $xi-gray;
+          padding: $grid-gutter-width/2 ;
+          border-radius: $border-radius-base;
+        }
+        a:hover {
+          background-color: $xi-green;
+          color: $xi-white;
+        }
+    }
+  } 
+  .region-navigation-collapsible {
+    display: inline-block;
+    float: right;
+  }
+}
+
+.path-frontpage .navbar-main nav li a {
+  color: $xi-white;
+}

@@ -1,0 +1,23 @@
+uuid: 5ea0d4f6-cd55-4cec-b97d-2f7d69bba2d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_to_sponsor_page
+    - node.type.sponsor
+  module:
+    - link
+id: node.sponsor.field_link_to_sponsor_page
+field_name: field_link_to_sponsor_page
+entity_type: node
+bundle: sponsor
+label: 'Link to Sponsor-page'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

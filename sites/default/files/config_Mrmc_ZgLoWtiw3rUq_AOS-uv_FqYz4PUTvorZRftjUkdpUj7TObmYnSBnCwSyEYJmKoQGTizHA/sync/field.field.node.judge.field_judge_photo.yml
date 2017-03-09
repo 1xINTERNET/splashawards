@@ -1,0 +1,27 @@
+uuid: dbacaa89-1b93-4afc-9f59-085e811ca885
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_judge_photo
+    - node.type.judge
+  module:
+    - file
+id: node.judge.field_judge_photo
+field_name: field_judge_photo
+entity_type: node
+bundle: judge
+label: judge_photo
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg svg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -3,6 +3,15 @@
  */
 $bootstrap-sass-asset-helper: false;
 
+
+$xi-green: #48A3A6;
+$xi-orange: #EF7247;
+$xi-blue-light: #E7EBED;
+$xi-white: #fff; 
+$xi-gray-light: #acacac; 
+$xi-gray: #777; 
+$xi-gray-darker: #444; 
+
 //
 // Variables
 // --------------------------------------------------
@@ -15,7 +24,7 @@ $gray-dark: lighten($gray-base, 20%); // #333
 $gray: lighten($gray-base, 33.5%); // #555
 $gray-light: lighten($gray-base, 46.7%); // #777
 $gray-lighter: lighten($gray-base, 93.5%); // #eee
-$brand-primary: darken(#428bca, 6.5%); // #337ab7
+$brand-primary: $xi-green;
 $brand-success: #5cb85c;
 $brand-info: #5bc0de;
 $brand-warning: #f0ad4e;
@@ -34,7 +43,7 @@ $text-color: $gray-dark;
 $link-color: $brand-primary;
 
 //** Link hover color set via `darken()` function.
-$link-hover-color: darken($link-color, 15%);
+$link-hover-color: $xi-orange;
 
 //** Link hover decoration.
 $link-hover-decoration: underline;
@@ -48,11 +57,11 @@ $font-family-serif: Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base: $font-family-sans-serif;
-$font-size-base: 14px;
-$font-size-large: ceil(($font-size-base * 1.25)); // ~18px
-$font-size-small: ceil(($font-size-base * 0.85)); // ~12px
-$font-size-h1: floor(($font-size-base * 2.6)); // ~36px
-$font-size-h2: floor(($font-size-base * 2.15)); // ~30px
+$font-size-base: 16px;
+$font-size-large: 18px; // ~18px
+$font-size-small: 14px; // ~12px
+$font-size-h1: 60px; // ~36px
+$font-size-h2: 40px; // ~30px
 $font-size-h3: ceil(($font-size-base * 1.7)); // ~24px
 $font-size-h4: ceil(($font-size-base * 1.25)); // ~18px
 $font-size-h5: $font-size-base;

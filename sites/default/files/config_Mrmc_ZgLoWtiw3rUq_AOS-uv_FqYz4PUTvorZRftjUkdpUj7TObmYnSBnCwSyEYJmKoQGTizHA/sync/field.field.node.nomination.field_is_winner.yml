@@ -1,0 +1,23 @@
+uuid: 85d7c583-a06f-465f-aafb-6c2ec6b91356
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_winner
+    - node.type.nomination
+id: node.nomination.field_is_winner
+field_name: field_is_winner
+entity_type: node
+bundle: nomination
+label: 'Gewinner ?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

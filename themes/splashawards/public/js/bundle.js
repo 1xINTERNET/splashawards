@@ -74,6 +74,7 @@
 	                        $listElement.toggleClass(menuItemSelectedClass);
 	                    }
 
+<<<<<<< HEAD
 	                    $listElement.text(categoryName);
 	                    $menu.append($listElement);
 	                    $listElement.data(dataKey, tid);
@@ -112,6 +113,34 @@
 	            }
 	        }
 	    };
+=======
+	    /*Drupal.behaviors.exampleBehavior = {
+	     attach: (context) => {
+	     $('.my-selector', context).once('example-behavior').each(() => {});
+	     }
+	     };*/
+
+	    jQuery('.sponsor-slider').each(function (position, element) {
+	        $(element).slick({
+	            infinite: true,
+	            slidesToShow: 3,
+	            slidesToScroll: 3
+	        });
+	    });
+
+	    jQuery('.nomination-screenshots-slider').each(function (position, element) {
+	        $(element).slick({
+	            infinite: true,
+	            slidesToShow: 1,
+	            slidesToScroll: 1,
+	            swipe: false,
+	            touchMove: false,
+	            autoplay: true,
+	            arrows: false,
+	            autoplaySpeed: 2000
+	        });
+	    });
+>>>>>>> b8e5cab84f1b78d5ab13adeb822f2886758759e6
 	})(jQuery, window.Drupal);
 
 /***/ },

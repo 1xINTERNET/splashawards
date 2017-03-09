@@ -1,0 +1,27 @@
+uuid: a70271a4-89d8-4d20-82e7-32c95dd4023e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sponsor_logo
+    - node.type.sponsor
+  module:
+    - file
+id: node.sponsor.field_sponsor_logo
+field_name: field_sponsor_logo
+entity_type: node
+bundle: sponsor
+label: 'Sponsor Logo'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg svg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

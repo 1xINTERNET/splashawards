@@ -1,0 +1,60 @@
+// responsive mixin
+@mixin smaller-than($breakpoint) {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin larger-than($breakpoint) {
+  @media only screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+
+// hides the content of the element
+// and instead shows a font-icon
+@mixin icon($char: "") {
+  font-size: 1px;
+  line-height: $line-height-computed;
+  letter-spacing: -1px;
+  color: transparent;
+  display: inline-block;
+  &:before {
+    @include fa-icon;
+    vertical-align: middle;
+    color: $text-color;
+    font-size: $font-size-base;
+    content: $char;
+    line-height: 1;
+  }
+}
+
+// shows an icon before an element
+// vertically aligned on the baseline
+// with a $margin to the content (default 0.25em)
+@mixin icon-before($char: "", $margin: 0.25em) {
+  display: inline-block;
+  vertical-align: baseline;
+  &:before {
+    @include fa-icon;
+    margin-right: $margin;
+    vertical-align: baseline;
+    content: $char;
+  }
+}
+
+// shows an icon after an element
+// vertically aligned on the baseline
+// with a $margin to the content (default 0.25em)
+@mixin icon-after($char: "", $margin: 0.25em) {
+  display: inline-block;
+  vertical-align: baseline;
+  &:after {
+    @include fa-icon;
+    margin-left: $margin;
+    vertical-align: baseline;
+    content: $char;
+  }
+}
+

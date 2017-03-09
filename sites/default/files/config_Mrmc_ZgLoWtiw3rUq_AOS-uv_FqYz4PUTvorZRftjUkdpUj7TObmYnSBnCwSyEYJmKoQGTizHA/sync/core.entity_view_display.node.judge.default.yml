@@ -1,0 +1,31 @@
+uuid: 1286b478-556c-45b1-b43b-30758ac993fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.judge.field_judge_company_position
+    - field.field.node.judge.field_judge_photo
+    - node.type.judge
+  module:
+    - file
+    - user
+id: node.judge.default
+targetEntityType: node
+bundle: judge
+mode: default
+content:
+  field_judge_company_position:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_judge_photo:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+hidden:
+  links: true

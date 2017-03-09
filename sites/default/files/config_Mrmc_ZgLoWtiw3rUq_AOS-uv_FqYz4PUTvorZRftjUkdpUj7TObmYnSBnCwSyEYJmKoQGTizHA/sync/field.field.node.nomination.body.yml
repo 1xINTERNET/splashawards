@@ -1,0 +1,22 @@
+uuid: fff1977d-8299-41e1-bf0b-f945b530d1dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.nomination
+  module:
+    - text
+id: node.nomination.body
+field_name: body
+entity_type: node
+bundle: nomination
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

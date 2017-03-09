@@ -1,0 +1,23 @@
+uuid: b6d41c28-293d-41df-9962-9719eaa5ce93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_to_project
+    - node.type.nomination
+  module:
+    - link
+id: node.nomination.field_link_to_project
+field_name: field_link_to_project
+entity_type: node
+bundle: nomination
+label: 'Link to Project-Homepage'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

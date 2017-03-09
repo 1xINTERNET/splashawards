@@ -1,0 +1,8 @@
+uuid: eb931753-0f80-4442-b2f0-9936d6d50522
+langcode: en
+status: true
+dependencies: {  }
+id: splashawardsmenu
+label: SplashawardsMenu
+description: ''
+locked: false

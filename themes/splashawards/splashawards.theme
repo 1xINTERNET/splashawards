@@ -142,7 +142,7 @@ function _splashawards_preprocess_nomination_node($variables) {
         'bodyFull' => $bodyValue['value'],
         'title' => $title,
         'summary' => $bodyValue['summary'],
-        'subTitle' => $subTitle->getString(),
+        'subTitle' => is_null($subTitle) ? '' : $subTitle->getString(),
         'category' => $term->getName(),
         'nominationCategory' => $entityReference->getString(),
         'customerLogoUrl' => file_create_url($customerLogoFile->getFileUri()),
@@ -163,7 +163,6 @@ function _splashawards_preprocess_nomination_node($variables) {
 
     return $variables;
 }
-
 
 /**
  * Enriches the variable-array with information for the theme-specific templates of type sponsor.
@@ -205,7 +204,6 @@ function _splashawards_preprocess_sponsor_node($variables) {
 
     return $variables;
 }
-
 
 /**
  * Implements hook_preprocess_HOOK() for node.html.twig.

@@ -1,5 +1,0 @@
-# Schema for the configuration files of the Bartik theme.
-
-splashawards_start.settings:
-  type: theme_settings
-  label: 'splashawards_start settings'

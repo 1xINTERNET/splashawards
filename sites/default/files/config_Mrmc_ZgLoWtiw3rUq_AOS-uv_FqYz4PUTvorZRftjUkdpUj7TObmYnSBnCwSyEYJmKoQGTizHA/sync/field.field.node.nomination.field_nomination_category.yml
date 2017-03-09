@@ -1,0 +1,28 @@
+uuid: 4b70454e-3b6e-4c25-9505-2ee864a04d0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nomination_category
+    - node.type.nomination
+    - taxonomy.vocabulary.nomination_categories
+id: node.nomination.field_nomination_category
+field_name: field_nomination_category
+entity_type: node
+bundle: nomination
+label: Nominierungskategorie
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nomination_categories: nomination_categories
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

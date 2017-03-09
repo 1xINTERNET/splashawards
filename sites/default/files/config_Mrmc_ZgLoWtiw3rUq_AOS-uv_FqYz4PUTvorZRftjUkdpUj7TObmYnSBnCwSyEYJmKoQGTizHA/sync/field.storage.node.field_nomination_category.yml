@@ -1,0 +1,20 @@
+uuid: ebee98b3-8daf-4d7a-ae42-5804ff5920d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_nomination_category
+field_name: field_nomination_category
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

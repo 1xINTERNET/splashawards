@@ -1,0 +1,19 @@
+uuid: 7fc9b59f-3bb1-4047-b937-dd5ccd96b680
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nomination_subtitle
+    - node.type.nomination
+id: node.nomination.field_nomination_subtitle
+field_name: field_nomination_subtitle
+entity_type: node
+bundle: nomination
+label: Subtitle
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

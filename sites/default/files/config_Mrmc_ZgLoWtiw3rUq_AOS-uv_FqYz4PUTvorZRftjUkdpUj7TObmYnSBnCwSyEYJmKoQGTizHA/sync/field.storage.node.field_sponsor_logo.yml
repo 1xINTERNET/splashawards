@@ -1,0 +1,23 @@
+uuid: 4c3c0135-2b58-44e0-8955-87732772682d
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_sponsor_logo
+field_name: field_sponsor_logo
+entity_type: node
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

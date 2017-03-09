@@ -1,0 +1,17 @@
+uuid: 4185ee7d-f0d3-4933-b4cc-0419471dc406
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.judge
+  module:
+    - user
+id: node.judge.teaser
+targetEntityType: node
+bundle: judge
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden: {  }

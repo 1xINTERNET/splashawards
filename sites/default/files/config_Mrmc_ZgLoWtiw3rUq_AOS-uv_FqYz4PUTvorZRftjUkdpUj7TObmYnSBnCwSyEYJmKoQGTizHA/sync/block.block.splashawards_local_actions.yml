@@ -1,0 +1,20 @@
+uuid: 18dd4b44-4a32-491c-b0eb-8a4caaf8d1ea
+langcode: en
+status: true
+dependencies:
+  theme:
+    - splashawards
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: splashawards_local_actions
+theme: splashawards
+region: highlighted
+weight: -8
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

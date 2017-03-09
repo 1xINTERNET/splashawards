@@ -1,0 +1,105 @@
+uuid: d39893a2-cc6d-49ec-bbb0-b70ea1bc7a60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.nomination.body
+    - field.field.node.nomination.field_customer_logo
+    - field.field.node.nomination.field_is_winner
+    - field.field.node.nomination.field_link_to_project
+    - field.field.node.nomination.field_nomination_category
+    - field.field.node.nomination.field_nomination_subtitle
+    - field.field.node.nomination.field_nomination_teaser_text
+    - field.field.node.nomination.field_projectname
+    - field.field.node.nomination.field_teaser_website_screenshots
+    - field.field.node.nomination.field_website_screenshots
+    - node.type.nomination
+  module:
+    - image
+    - link
+    - text
+    - user
+id: node.nomination.default
+targetEntityType: node
+bundle: nomination
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_customer_logo:
+    weight: 102
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_is_winner:
+    weight: 109
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_link_to_project:
+    weight: 103
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link_separate
+  field_nomination_category:
+    weight: 104
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_nomination_subtitle:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_nomination_teaser_text:
+    weight: 113
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_projectname:
+    weight: 105
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_teaser_website_screenshots:
+    weight: 112
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_website_screenshots:
+    weight: 108
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+hidden:
+  links: true

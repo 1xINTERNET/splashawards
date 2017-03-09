@@ -1,0 +1,55 @@
+uuid: 73aabeb1-4098-423c-b9b8-99d721595f09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sponsor.field_is_gold_sponsor
+    - field.field.node.sponsor.field_link_to_sponsor_page
+    - field.field.node.sponsor.field_sponsor_logo
+    - field.field.node.sponsor.field_sponsor_logo_alt_text
+    - node.type.sponsor
+  module:
+    - file
+    - link
+    - user
+id: node.sponsor.default
+targetEntityType: node
+bundle: sponsor
+mode: default
+content:
+  field_is_gold_sponsor:
+    weight: 101
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_link_to_sponsor_page:
+    weight: 104
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_sponsor_logo:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+  field_sponsor_logo_alt_text:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  links:
+    weight: 100
+hidden: {  }

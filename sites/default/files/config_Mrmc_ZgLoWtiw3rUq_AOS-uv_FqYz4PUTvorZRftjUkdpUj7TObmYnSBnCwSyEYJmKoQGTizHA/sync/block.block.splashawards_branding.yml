@@ -1,0 +1,25 @@
+uuid: 4ace9c3b-c594-43f7-bb37-2fc20b6b2e4a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - splashawards
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: splashawards_branding
+theme: splashawards
+region: header
+weight: -10
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

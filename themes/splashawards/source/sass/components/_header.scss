@@ -1,3 +1,7 @@
+header {
+  margin-bottom: $line-height-computed*2;
+}
+
 .path-frontpage header {
   background-image: url(../../images/bg-splash-dark-comp.jpg);
   background-repeat: no-repeat;
@@ -5,6 +9,9 @@
   background-attachment: fixed;
   min-height: 70vh; 
   color: $xi-white;
+  h1 {
+    color: $xi-white;
+  }
 }
 .logo {
   float: none !important;

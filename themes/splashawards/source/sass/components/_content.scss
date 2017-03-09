@@ -1,5 +1,15 @@
 // Bottom borders: 
 
-.path-frontpage header {
-  border-bottom: 4px solid rgba($xi-gray-light, 0.8);
+header {
+  border-bottom: 4px solid rgba($xi-gray-light, 0.6);
+}
+
+.path-frontpage {
+  h2, h3 {
+    text-align: center;
+  }
+}
+
+section {
+  margin-bottom: $grid-gutter-width*3;
 }

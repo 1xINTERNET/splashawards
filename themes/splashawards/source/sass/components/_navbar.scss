@@ -2,11 +2,12 @@
 .navbar {
   background-color: transparent;
   border: none;
+  margin-bottom: $line-height-computed/2;
   nav {
     font-weight:bolder;
-    padding-top: $line-height-computed; 
     text-transform: uppercase;
-      list-style: none;   
+    list-style: none;  
+    padding-top: $line-height-computed/2;  
       li {
         display: inline-block;
         border-radius: 4px;

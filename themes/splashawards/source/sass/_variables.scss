@@ -3,11 +3,14 @@
  */
 $bootstrap-sass-asset-helper: false;
 
+
 $xi-green: #48A3A6;
 $xi-orange: #EF7247;
+$xi-blue-light: #E7EBED;
 $xi-white: #fff; 
 $xi-gray-light: #acacac; 
 $xi-gray: #777; 
+$xi-gray-darker: #444; 
 
 //
 // Variables
@@ -58,7 +61,7 @@ $font-size-base: 16px;
 $font-size-large: 18px; // ~18px
 $font-size-small: 14px; // ~12px
 $font-size-h1: 60px; // ~36px
-$font-size-h2: floor(($font-size-base * 2.15)); // ~30px
+$font-size-h2: 40px; // ~30px
 $font-size-h3: ceil(($font-size-base * 1.7)); // ~24px
 $font-size-h4: ceil(($font-size-base * 1.25)); // ~18px
 $font-size-h5: $font-size-base;

@@ -11,7 +11,7 @@ _core:
 id: splashawards_messages
 theme: splashawards
 region: highlighted
-weight: -5
+weight: 0
 provider: null
 plugin: system_messages_block
 settings:

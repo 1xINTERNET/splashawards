@@ -95,7 +95,7 @@ content:
     type: image
   field_website_screenshots:
     weight: 108
-    label: hidden
+    label: above
     settings:
       image_style: ''
       image_link: ''

@@ -11,7 +11,7 @@ dependencies:
 id: splashawardsmenu_2
 theme: splashawards
 region: navigation_collapsible
-weight: -11
+weight: 0
 provider: null
 plugin: 'system_menu_block:splashawardsmenu'
 settings:

@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.sponsor.field_is_gold_sponsor
     - field.field.node.sponsor.field_link_to_sponsor_page
     - field.field.node.sponsor.field_sponsor_logo
     - field.field.node.sponsor.field_sponsor_logo_alt_text
@@ -17,15 +16,6 @@ targetEntityType: node
 bundle: sponsor
 mode: default
 content:
-  field_is_gold_sponsor:
-    weight: 101
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
   field_link_to_sponsor_page:
     weight: 104
     label: above

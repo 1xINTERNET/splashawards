@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.sponsor.field_is_gold_sponsor
     - field.field.node.sponsor.field_link_to_sponsor_page
     - field.field.node.sponsor.field_sponsor_logo
     - field.field.node.sponsor.field_sponsor_logo_alt_text
@@ -22,12 +21,6 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
-  field_is_gold_sponsor:
-    weight: 31
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
   field_link_to_sponsor_page:
     weight: 34
     settings:

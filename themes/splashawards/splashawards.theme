@@ -44,6 +44,7 @@ function _splashawards_preprocess_judge_node($variables) {
     return $variables;
 }
 
+
 /**
  * @param array $variables
  * @return array
@@ -134,7 +135,6 @@ function _splashawards_preprocess_nomination_node($variables) {
         'entity.node.canonical',
         array('node' => $variables['node']->id()),
         array('absolute' => true));
-
 
     $link = \Drupal\Core\Link::fromTextAndUrl(\Drupal::translation()->translate('Weiterlesen'), $url);
 
@@ -231,4 +231,3 @@ function splashawards_preprocess_node(&$variables) {
         unset($variables['content']['links']['comment']['#links']['comment-add']);
     }
 }
-

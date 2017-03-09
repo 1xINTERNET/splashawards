@@ -1,0 +1,36 @@
+.block-views-blocknomination-list-block-2 {
+  .select-wrapper {
+    select {
+      display: none !important;
+    }
+
+    &:after {
+      content: '' !important;
+      display: none;
+    }
+
+    .nomination-category-menu {
+      list-style: none;
+      li {
+        display: inline-block;
+        padding: 5px;
+        border-radius: 3px;
+        background-color: #fefefe;
+        font-weight:bolder;
+        cursor: pointer;
+        margin-right: 3px;
+
+        &:focus, &:hover, &.selected {
+          background-color: #0e69be;
+          color: #9dcae7;
+        }
+      }
+    }
+
+  }
+  .js-form-wrapper {
+    .form-submit {
+      display: none !important;
+    }
+  }
+}

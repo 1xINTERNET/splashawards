@@ -8,14 +8,15 @@
     .views-row {
       display: inline-block;
       vertical-align: middle;
+      margin-left: 10px;
 
       .nomination-teaser {
         width: 250px;
         margin-left: auto;
         margin-right:auto;
-        border-radius: 3px;
+        border-radius: 10px;
         background-color: #fefefe;
-        padding: 4px;
+        padding: 10px;
 
         h4, h5, .nomination-teaser-text{
           text-align: center;

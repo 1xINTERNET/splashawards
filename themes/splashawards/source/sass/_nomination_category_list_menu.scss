@@ -12,17 +12,16 @@
     .nomination-category-menu {
       list-style: none;
       li {
+        color: #ffffff;
         display: inline-block;
-        padding: 5px;
-        border-radius: 3px;
-        background-color: #fefefe;
-        font-weight:bolder;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: #b8bcbd;
         cursor: pointer;
-        margin-right: 3px;
+        margin: 8px 20px 8px 8px;
 
         &:focus, &:hover, &.selected {
-          background-color: #0e69be;
-          color: #9dcae7;
+          background-color: #2C3840;
         }
       }
     }

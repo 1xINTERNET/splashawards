@@ -9,5 +9,13 @@
   }
   .project-link-button {
     @include make-button-light($xi-green, $xi-white);
+    display: inline-block; 
+    margin-top: 0; 
+  }
+  .field--name-field-website-screenshots {
+    .field--item {
+      margin-bottom: $line-height-computed*2; 
+    }
   }
 }
+

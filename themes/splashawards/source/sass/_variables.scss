@@ -60,7 +60,7 @@ $font-family-base: $font-family-sans-serif;
 $font-size-base: 16px;
 $font-size-large: 18px; // ~18px
 $font-size-small: 14px; // ~12px
-$font-size-h1: 60px; // ~36px
+$font-size-h1: 50px; // ~36px
 $font-size-h2: 40px; // ~30px
 $font-size-h3: ceil(($font-size-base * 1.7)); // ~24px
 $font-size-h4: ceil(($font-size-base * 1.25)); // ~18px
@@ -107,7 +107,7 @@ $padding-xs-horizontal: 5px;
 $line-height-large: 1.3333333; // extra decimals for Win 8.1 Chrome
 $line-height-small: 1.5;
 $border-radius-base: 4px;
-$border-radius-large: 6px;
+$border-radius-large: 10px;
 $border-radius-small: 3px;
 
 //** Global color for active items (e.g., navs or dropdowns).

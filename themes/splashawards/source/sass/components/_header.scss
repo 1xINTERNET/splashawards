@@ -7,14 +7,24 @@
   color: $xi-white;
   h1 {
     color: $xi-white;
+    font-size: 3em; 
+  }
+  section {
+    padding: $grid-gutter-width; 
   }
 }
 .logo {
   float: none !important;
   img {
-    width: 70%;
     height: auto;
+    @include larger-than($screen-sm) {
+      width: 70%;
+    }
   }
+}
+
+.header-logo {
+  padding-bottom: $grid-gutter-width; 
 }
 
 .section-highlighted {

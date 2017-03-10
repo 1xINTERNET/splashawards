@@ -86,13 +86,13 @@
       </div>
     </div>
     <div class="row">
+      <div class="nomination-full__project-url col-sm-6">
+        {# content.field_link_to_project #}
+        <div class="project-link"><a class="project-link-button" href="{{ splashawards.nomination.projectLink }}" target="_blank"> {{ 'Project page'|t }} </a></div>
+      </div>
       <div class="nomination-full__category col-sm-6">
         <h4>{{ 'Category:'|t }}</h4>
         {{ content.field_nomination_category }}
-      </div>
-      <div class="nomination-full__project-url col-sm-6">
-        {# content.field_link_to_project #}
-        <div class="project-link"><a class="project-link-button" href="{{ splashawards.nomination.projectLink }}"> {{ 'Project page'|t }} </a></div>
       </div>
     </div>
     <div class="nomination-full__content">

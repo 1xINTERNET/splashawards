@@ -84,8 +84,8 @@
             {% endfor %}
         </ul>
         <div class="nomination-teaser-text">
-            {{ splashawards.nomination.teaserText|raw }}<br>
-            {{ splashawards.nomination.readMoreLink|raw }}
+            <p>{{ splashawards.nomination.teaserText|raw }}</p>
+            <div class="readmore-small">{{ splashawards.nomination.readMoreLink|raw }}</div>
         </div>
     </div>
 </article>

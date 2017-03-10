@@ -1,4 +1,4 @@
-uuid: b5d3ad93-173d-43f8-b737-6d13f62fbf20
+uuid: c53a2044-98fa-4215-aec4-5b8e987602c1
 langcode: en
 status: true
 dependencies:
@@ -8,8 +8,8 @@ dependencies:
   module:
     - node
     - user
-id: display_goldsponsors
-label: 'Display Goldsponsors'
+id: display_other_sponsors
+label: 'Display other sponsors'
 module: views
 description: 'Selects Gold-Sponsors and displays them in a slider'
 tag: ''
@@ -59,7 +59,7 @@ display:
           default_row_class: true
           uses_fields: false
           type: ul
-          wrapper_class: 'item-list '
+          wrapper_class: item-list
           class: ''
       row:
         type: 'entity:node'
@@ -174,7 +174,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: '1'
+          value: '0'
           group: 1
           exposed: false
           expose:
@@ -203,7 +203,7 @@ display:
             group_items: {  }
           plugin_id: boolean
       sorts: {  }
-      title: 'Gold Sponsors'
+      title: 'Other Sponsors'
       header: {  }
       footer: {  }
       empty: {  }
@@ -227,7 +227,7 @@ display:
       display_extenders: {  }
       allow:
         items_per_page: false
-      block_description: Sponsors
+      block_description: 'other sponsors'
     cache_metadata:
       max-age: -1
       contexts:

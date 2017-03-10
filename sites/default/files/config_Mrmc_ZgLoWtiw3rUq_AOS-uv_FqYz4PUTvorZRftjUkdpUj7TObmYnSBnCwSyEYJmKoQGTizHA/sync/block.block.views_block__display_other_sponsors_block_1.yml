@@ -1,21 +1,21 @@
-uuid: c0227149-bae6-4316-8070-a31ec31a187a
+uuid: cfdb1919-9267-4640-879d-6493849fdbf7
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.display_goldsponsors
+    - views.view.display_other_sponsors
   module:
     - views
   theme:
     - splashawards
-id: views_block__display_goldsponsors_block_1
+id: views_block__display_other_sponsors_block_1
 theme: splashawards
 region: content
-weight: -6
+weight: 0
 provider: null
-plugin: 'views_block:display_goldsponsors-block_1'
+plugin: 'views_block:display_other_sponsors-block_1'
 settings:
-  id: 'views_block:display_goldsponsors-block_1'
+  id: 'views_block:display_other_sponsors-block_1'
   label: ''
   provider: views
   label_display: visible

@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - node.type.nomination
     - taxonomy.vocabulary.nomination_categories
-    - views.view.nomination_categories
   module:
     - node
     - taxonomy
@@ -54,7 +53,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 10
+          items_per_page: 0
           offset: 0
       style:
         type: default
@@ -163,59 +162,9 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        tid:
-          id: tid
-          table: taxonomy_index
-          field: tid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: tid_op
-            label: 'Has taxonomy term'
-            description: ''
-            use_operator: false
-            operator: tid_op
-            identifier: tid
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: nomination_categories
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
       sorts: {  }
       title: CompositStartPage
-      header:
-        view:
-          id: view
-          table: views
-          field: view
-          plugin_id: view
+      header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
@@ -226,8 +175,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -308,6 +255,143 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: NominationList
+    position: 3
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      use_ajax: true
+      defaults:
+        use_ajax: false
+        filters: false
+        filter_groups: false
+        style: false
+        row: false
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            nomination: nomination
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: tid_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: tid_op
+            identifier: tid
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: nomination_categories
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

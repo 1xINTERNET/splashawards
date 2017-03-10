@@ -8,8 +8,8 @@ _core:
   default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
 id: splashawards_local_tasks
 theme: splashawards
-region: content
-weight: -7
+region: highlighted
+weight: -9
 provider: null
 plugin: local_tasks_block
 settings:

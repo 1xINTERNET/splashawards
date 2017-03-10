@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.field_projectname
     - taxonomy.vocabulary.nomination_categories
   module:
-    - better_exposed_filters
     - node
     - taxonomy
     - user
@@ -41,7 +40,7 @@ display:
           query_comment: ''
           query_tags: {  }
       exposed_form:
-        type: bef
+        type: basic
         options:
           submit_button: Apply
           reset_button: false
@@ -50,24 +49,10 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-          bef:
-            general:
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              autosubmit: false
-              autosubmit_hide: false
-            tid:
-              bef_format: bef_links
-              more_options:
-                bef_select_all_none: false
-                bef_collapsible: false
-                is_secondary: false
-                rewrite:
-                  filter_rewrite_values: ''
       pager:
         type: some
         options:
-          items_per_page: 0
+          items_per_page: 10
           offset: 0
       style:
         type: default
@@ -255,91 +240,11 @@ display:
           id: vid
           table: taxonomy_term_field_data
           field: vid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
           value:
             nomination_categories: nomination_categories
-          group: 1
-          exposed: false
-          expose:
-            operator_id: vid_op
-            label: Vocabulary
-            description: ''
-            use_operator: false
-            operator: vid_op
-            identifier: vid
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
           entity_type: taxonomy_term
           entity_field: vid
           plugin_id: bundle
-        tid:
-          id: tid
-          table: taxonomy_term_field_data
-          field: tid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: tid_op
-            label: Term
-            description: ''
-            use_operator: false
-            operator: tid_op
-            identifier: tid
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: nomination_categories
-          hierarchy: false
-          error_message: true
-          entity_type: taxonomy_term
-          entity_field: tid
-          plugin_id: taxonomy_index_tid
       sorts: {  }
       title: 'Category And Nomination Listing'
       header: {  }
@@ -363,8 +268,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
-        - user
         - user.permissions
       tags:
         - 'config:field.storage.node.field_projectname'
@@ -390,8 +293,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
-        - user
         - user.permissions
       tags:
         - 'config:field.storage.node.field_projectname'

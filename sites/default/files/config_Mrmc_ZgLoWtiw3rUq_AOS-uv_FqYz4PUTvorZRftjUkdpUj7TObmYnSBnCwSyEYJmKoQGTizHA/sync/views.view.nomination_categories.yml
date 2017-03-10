@@ -60,7 +60,7 @@ display:
           default_row_class: true
           type: ul
           wrapper_class: 'item-list '
-          class: ''
+          class: category-item-list
       row:
         type: fields
         options:
@@ -79,7 +79,7 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
+            alter_text: true
             text: "<span data-nomination-category=\"{{ name__value }}\">\n{{ name__value }}\n</span>"
             make_link: false
             path: ''

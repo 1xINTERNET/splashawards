@@ -1,4 +1,4 @@
-uuid: 38cff98a-0cac-4974-b2a1-e35737f76258
+uuid: 9945767c-9659-48d2-a8b1-bffcf4582ee0
 langcode: en
 status: true
 dependencies:
@@ -9,14 +9,14 @@ dependencies:
     - views
   theme:
     - splashawards
-id: views_block__compositstartpage_block_1
+id: views_block__compositstartpage_block_2
 theme: splashawards
 region: content
-weight: -9
+weight: -7
 provider: null
-plugin: 'views_block:compositstartpage-block_1'
+plugin: 'views_block:compositstartpage-block_2'
 settings:
-  id: 'views_block:compositstartpage-block_1'
+  id: 'views_block:compositstartpage-block_2'
   label: ''
   provider: views
   label_display: '0'

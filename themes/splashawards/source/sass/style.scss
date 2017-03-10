@@ -1,6 +1,8 @@
 @import "variables";
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 @import "mixins";
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
 
 //@import "bootstrap-sass/mixins";
 @import "components/content.scss";
@@ -10,6 +12,7 @@
 @import "elements/blocks.scss";
 @import "elements/fields.scss";
 @import "elements/navs.scss";
+@import "elements/sliders.scss";
 @import "elements/type.scss";
 @import "pages/front.scss";
 @import "view-modes/full.scss";
@@ -19,6 +22,3 @@
 
 //@import "views/*.scss";
 @import "layout";
-
-@import "../../node_modules/slick-carousel/slick/slick.scss";
-@import "../../node_modules/slick-carousel/slick/slick-theme.scss";

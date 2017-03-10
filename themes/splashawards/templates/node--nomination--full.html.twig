@@ -74,14 +74,26 @@
 #}
 
 <article{{ attributes }}>
-  <div{{ content_attributes }}>
-    Eingereicht durch:<br>
-    {{ content.field_customer_logo }}
-    Projectname:<br>
-    <h2>  {{ content.field_projectname }}</h2>
+  <div class="nomination-full">
+    <div class="nomination-full__nominator">
+      {{ 'Eingereicht durch:'|t }} <br>
+      {{ content.field_customer_logo }}      
+    </div>
+    <div class="nomination-full__projectname">
+      {{ 'Projectname:'|t }}
+      <h2>  {{ content.field_projectname }}</h2>
+    </div>
+    <div class="nomination-full__category">
+      {{ 'Categorie:'|t }}
       {{ content.field_nomination_category }}
+    </div>
+    <div class="nomination-full__project-url">
+      {{ 'Project:'|t }}
       {{ content.field_link_to_project }}
+    </div>
+    <div class="nomination-full__content">
       {{ content.field_website_screenshots }}
       {{ content.body }}
+    </div>
   </div>
 </article>

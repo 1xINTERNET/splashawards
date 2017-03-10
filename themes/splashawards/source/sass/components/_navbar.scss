@@ -12,12 +12,14 @@
         display: inline-block;
         border-radius: 4px;
         margin-left: $grid-gutter-width/6; 
-        a, a:visited, a:hover, a:focus{
-          color: $xi-gray;
+        a {
           padding: $grid-gutter-width/2 ;
+        }
+        a:link, a:visited {
+          color: $xi-gray;
           border-radius: $border-radius-base;
         }
-        a:hover {
+        a:hover, a:focus {
           background-color: $xi-green;
           color: $xi-white;
         }
@@ -32,3 +34,12 @@
 .path-frontpage .navbar-main nav li a {
   color: $xi-white;
 }
+
+.header-menu-logo {
+  display: inline-block;
+}
+
+.path-frontpage .header-menu-logo {
+  display: none;
+}
+

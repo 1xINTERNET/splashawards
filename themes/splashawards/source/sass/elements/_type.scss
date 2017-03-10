@@ -1,7 +1,42 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.8;
+  margin-top: 0; 
+}
+
+h1 {
+  text-transform: uppercase; 
+  @include smaller-than($screen-xs) {
+    font-size: 2.5em; 
+  }
+
+}
+
+h1, h2 {
+  font-family: 'Roboto Slab', serif; 
+}
+
 h1, h2, h3 {
   color: $xi-gray-darker; 
+  font-weight: bold;
+}
+
+h2, h3 {
+  margin-bottom: $line-height-computed; 
+}
+
+h4 {
+  text-transform: uppercase; 
+  color: $xi-gray;
+  font-weight: bold;  
+}
+
+h5 {
+  color: $xi-green;
+  font-weight: bold;
 }
 
 .page-header {
   border: none; 
+  padding-left: $grid-gutter-width/2;
 }

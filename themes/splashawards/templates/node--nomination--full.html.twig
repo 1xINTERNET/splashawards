@@ -74,14 +74,30 @@
 #}
 
 <article{{ attributes }}>
-  <div{{ content_attributes }}>
-    Eingereicht durch:<br>
-    {{ content.field_customer_logo }}
-    Projectname:<br>
-    <h2>  {{ content.field_projectname }}</h2>
-      {{ content.field_nomination_category }}
-      {{ content.field_link_to_project }}
+  <div class="nomination-full">
+    <div class="row">
+      <div class="nomination-full__nominator col-sm-6">
+        <h4>{{ 'Submitted by:'|t }}</h4>
+        {{ content.field_customer_logo }}      
+      </div>
+      <div class="nomination-full__projectname col-sm-6">
+        <h4>{{ 'Projectname:'|t }}</h4>
+        <div class="h2"> {{ content.field_projectname }}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="nomination-full__project-url col-sm-6">
+        {# content.field_link_to_project #}
+        <div class="project-link"><a class="project-link-button" href="{{ splashawards.nomination.projectLink }}" target="_blank"> {{ 'Project page'|t }} </a></div>
+      </div>
+      <div class="nomination-full__category col-sm-6">
+        <h4>{{ 'Category:'|t }}</h4>
+        {{ content.field_nomination_category }}
+      </div>
+    </div>
+    <div class="nomination-full__content">
       {{ content.field_website_screenshots }}
       {{ content.body }}
+    </div>
   </div>
 </article>

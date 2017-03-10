@@ -1,0 +1,28 @@
+.block-views-blockdisplay-other-sponsors-block-1 {
+  padding-top: 20px;
+  .view-id-display_other_sponsors {
+    .view-content {
+      .item-list {
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    
+        ul {
+          list-style: none;
+
+          li {
+
+          display: inline-block;
+	@media screen and (max-width: 520px) {
+            width: 40%;
+        }
+            img{
+              width: 75%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

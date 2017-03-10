@@ -71,26 +71,30 @@
 
     <header class="clearfix">
       <div {{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
-        <div class="navbar-header">
-          {{ page.navigation }}
-          {# .btn-navbar is used as the toggle for collapsed navbar content #}
+        <div class="row">
+          <div class="navbar-header">
+            {{ page.navigation }}
+            {# .btn-navbar is used as the toggle for collapsed navbar content #}
+            {% if page.navigation_collapsible %}
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            {% endif %}
+          </div>
+
+          {# Navigation (collapsible) #}
           {% if page.navigation_collapsible %}
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-              <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+            <div id="navbar-collapse" class="navbar-collapse collapse">
+              <div class="header-menu-logo">
+                <a href="/"><img src="/themes/splashawards/images/logo_blue.png" alt="blue logo of splashawards"></a>
+              </div>
+              {{ page.navigation_collapsible }}
+            </div>
           {% endif %}
         </div>
-
-        {# Navigation (collapsible) #}
-        {% if page.navigation_collapsible %}
-          <div id="navbar-collapse" class="navbar-collapse collapse">
-            {{ page.navigation_collapsible }}
-          </div>
-        {% endif %}
-
       </div>
   {% endblock %}
 

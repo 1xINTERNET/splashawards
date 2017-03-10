@@ -1,4 +1,4 @@
-.block-views-blocknomination-list-block-2 {
+.block-views-blockcompositstartpage-block-2 {
   .select-wrapper {
     select {
       display: none !important;
@@ -26,8 +26,15 @@
         }
       }
     }
-
   }
+
+  #views-exposed-form-compositstartpage-block-2 {
+    display: inline-block;
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .js-form-wrapper {
     .form-submit {
       display: none !important;

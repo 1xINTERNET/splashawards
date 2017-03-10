@@ -27,17 +27,19 @@ const Slick = require('slick-carousel');
                 });
             });
 
-            if (jQuery(context).find('#block-views-block-compositstartpage-block-2 select').length > 0) {
+            var parentTeaserSelector = '.view-compositstartpage.view-id-compositstartpage.view-display-id-block_2';
+
+            if (jQuery(context).find(parentTeaserSelector + ' select').length > 0) {
                 var $menu = jQuery('<ul>'),
                     dataKey = 'category-tid',
-                    $submitButton = jQuery(context).find('#block-views-block-compositstartpage-block-2 .js-form-submit'),
+                    $submitButton = jQuery(context).find(parentTeaserSelector + ' .form-actions .js-form-submit'),
                     menuItemSelectedClass = 'selected';
 
                 $menu.toggleClass('nomination-category-menu js-nomination-category-menu');
-                jQuery(context).find('#block-views-block-compositstartpage-block-2 select').parent().append($menu);
+                jQuery(context).find(parentTeaserSelector + ' select').parent().append($menu);
 
                 // reading the select-options creating the menu-list based on the their content
-                jQuery(context).find('#block-views-block-compositstartpage-block-2 select option').each(function (position, element) {
+                jQuery(context).find(parentTeaserSelector + ' select option').each(function (position, element) {
                     var tid = element.value,
                         categoryName = element.innerText,
                         $listElement = jQuery('<li>');
@@ -59,7 +61,7 @@ const Slick = require('slick-carousel');
 
                     // finding the requested option-and selecting it
                     jQuery(context).find(
-                        '#block-views-block-compositstartpage-block-2 select option[value=' +
+                        parentTeaserSelector + ' select option[value=' +
                         jQuery(event.target).data(dataKey) + ']'
                     ).selected();
                     $submitButton.click();

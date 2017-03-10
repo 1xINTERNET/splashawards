@@ -1,0 +1,17 @@
+uuid: 1d7fe76b-2239-4486-badc-7a9f3df2369e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Judge
+type: judge
+description: 'The people on the jury.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: true

@@ -1,0 +1,19 @@
+uuid: 2439af72-6656-4fee-a738-b86d67a81fc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sponsor_logo_alt_text
+    - node.type.sponsor
+id: node.sponsor.field_sponsor_logo_alt_text
+field_name: field_sponsor_logo_alt_text
+entity_type: node
+bundle: sponsor
+label: sponsor_logo_alt_text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

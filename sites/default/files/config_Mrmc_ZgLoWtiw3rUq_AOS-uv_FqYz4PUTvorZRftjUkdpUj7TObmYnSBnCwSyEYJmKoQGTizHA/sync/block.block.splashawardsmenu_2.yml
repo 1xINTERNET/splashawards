@@ -1,0 +1,24 @@
+uuid: 444d883f-0fcd-410e-bb75-7e746d84d9b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.splashawardsmenu
+  module:
+    - system
+  theme:
+    - splashawards
+id: splashawardsmenu_2
+theme: splashawards
+region: navigation_collapsible
+weight: -11
+provider: null
+plugin: 'system_menu_block:splashawardsmenu'
+settings:
+  id: 'system_menu_block:splashawardsmenu'
+  label: SplashawardsMenu
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

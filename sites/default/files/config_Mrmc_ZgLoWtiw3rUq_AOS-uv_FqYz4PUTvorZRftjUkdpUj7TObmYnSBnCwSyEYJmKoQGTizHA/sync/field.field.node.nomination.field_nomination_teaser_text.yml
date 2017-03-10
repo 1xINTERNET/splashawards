@@ -1,0 +1,21 @@
+uuid: c51614d5-7b40-49ac-a70d-36a2f6a93742
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nomination_teaser_text
+    - node.type.nomination
+  module:
+    - text
+id: node.nomination.field_nomination_teaser_text
+field_name: field_nomination_teaser_text
+entity_type: node
+bundle: nomination
+label: 'Teaser Text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

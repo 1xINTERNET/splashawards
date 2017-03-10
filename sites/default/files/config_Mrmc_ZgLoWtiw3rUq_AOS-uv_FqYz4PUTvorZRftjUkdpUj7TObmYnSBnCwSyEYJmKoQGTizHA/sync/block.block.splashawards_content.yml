@@ -1,0 +1,22 @@
+uuid: 769e3e6c-0206-425f-b0c6-9a075e5893c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - splashawards
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: splashawards_content
+theme: splashawards
+region: highlighted
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

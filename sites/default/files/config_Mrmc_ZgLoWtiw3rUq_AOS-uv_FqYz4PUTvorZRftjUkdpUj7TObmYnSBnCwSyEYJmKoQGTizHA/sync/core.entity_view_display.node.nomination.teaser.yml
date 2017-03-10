@@ -1,0 +1,26 @@
+uuid: 8eccbf04-77a0-4a15-a4dc-0782eae1a3ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.nomination.body
+    - node.type.nomination
+  module:
+    - text
+    - user
+id: node.nomination.teaser
+targetEntityType: node
+bundle: nomination
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }

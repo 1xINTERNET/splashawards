@@ -6,6 +6,12 @@ h2, h3 {
   margin-bottom: $line-height-computed; 
 }
 
+h4 {
+  text-transform: uppercase; 
+  color: $xi-gray;
+  font-weight: bold;  
+}
+
 .page-header {
   border: none; 
 }

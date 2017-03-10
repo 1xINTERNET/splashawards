@@ -46,19 +46,6 @@ section {
 .node-readmore {
   a {
     display: block; 
-    margin-top: $grid-gutter-width; 
-    padding: $grid-gutter-width/2; 
-    border-radius: $border-radius-base; 
-    text-decoration: none; 
-    text-transform: uppercase;
-    &:link, &:visited {
-      color: $xi-green; 
-      border: 2px solid $xi-green; 
-    }
-    &:hover, &:focus, &:active {
-      color: $xi-white; 
-      background: $xi-green; 
-    }
-
+    @include make-button-light($xi-green, $xi-white);
   }
 }

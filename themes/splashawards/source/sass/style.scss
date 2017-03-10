@@ -14,13 +14,10 @@
 @import "elements/navs.scss";
 @import "elements/sliders.scss";
 @import "elements/type.scss";
+@import "elements/nomination_category_list_menu";
 @import "pages/front.scss";
 @import "view-modes/full.scss";
 @import "view-modes/teaser.scss";
 @import "view-modes/nomination_full.scss";
-@import "views/nomination_category_list_menu";
-@import "nomination_category_list_menu";
-@import "nomination_teaser";
+@import "view-modes/nomination_teaser";
 
-//@import "views/*.scss";
-@import "layout";

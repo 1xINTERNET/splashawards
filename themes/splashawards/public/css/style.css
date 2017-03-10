@@ -225,7 +225,7 @@ header,
   margin-top: 90px;
   margin-bottom: 0; }
 
-.main-container .row > section {
+.main-container > section {
   padding: 0; }
 
 section {

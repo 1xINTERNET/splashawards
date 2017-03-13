@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.nomination.body
+    - field.field.node.nomination.field_company_logo
     - field.field.node.nomination.field_customer_logo
     - field.field.node.nomination.field_is_winner
     - field.field.node.nomination.field_link_to_project
@@ -30,11 +31,19 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_company_logo:
+    weight: 114
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_customer_logo:
     weight: 102
     label: hidden
     settings:
-      image_style: ''
+      image_style: medium
       image_link: ''
     third_party_settings: {  }
     type: image

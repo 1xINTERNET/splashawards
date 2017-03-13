@@ -1,27 +1,27 @@
-uuid: df552e1f-39a9-42bf-bfa1-8252031c3ced
+uuid: 7ccedb3e-96da-4f20-8cfb-1daea35e5d8e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_customer_logo
+    - field.storage.node.field_company_logo
     - node.type.nomination
   module:
     - image
-id: node.nomination.field_customer_logo
-field_name: field_customer_logo
+id: node.nomination.field_company_logo
+field_name: field_company_logo
 entity_type: node
 bundle: nomination
-label: 'Customer logo'
+label: 'Company logo'
 description: ''
-required: false
-translatable: true
+required: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: '[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
-  max_resolution: 250x250
+  max_resolution: ''
   min_resolution: ''
   alt_field: true
   alt_field_required: true

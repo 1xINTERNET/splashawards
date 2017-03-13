@@ -60,15 +60,19 @@ function _splashawards_preprocess_nomination_node($variables) {
     $term = \Drupal\taxonomy\Entity\Term::load($termID->getValue());
     $title = $variables['node']->getTitle();
 
-    $logoViewArray = $customerLogo->view();
+    if($customerLogo) {
+        $logoViewArray = $customerLogo->view();
+    }
     /** @var \Drupal\image\Plugin\Field\FieldType\ImageItem $customerLogoImage */
     $customerLogoImage = $logoViewArray['#item'];
-    /** @var \Drupal\Core\TypedData\Plugin\DataType\IntegerData $customerLogoImageID */
-    $customerLogoImageID = $customerLogoImage->get('target_id');
-    /** @var \Drupal\Core\TypedData\Plugin\DataType\StringData $customerLogoAltText */
-    $customerLogoAltText = $customerLogoImage->get('alt');
-    /** @var \Drupal\file\Entity\File $customerLogoFile */
-    $customerLogoFile = \Drupal\file\Entity\File::load($customerLogoImageID->getCastedValue());
+    if($customerLogoImage) {
+        /** @var \Drupal\Core\TypedData\Plugin\DataType\IntegerData $customerLogoImageID */
+        $customerLogoImageID = $customerLogoImage->get('target_id');
+        /** @var \Drupal\Core\TypedData\Plugin\DataType\StringData $customerLogoAltText */
+        $customerLogoAltText = $customerLogoImage->get('alt');
+        /** @var \Drupal\file\Entity\File $customerLogoFile */
+        $customerLogoFile = \Drupal\file\Entity\File::load($customerLogoImageID->getCastedValue());
+    }
 
     /** @var \Drupal\link\Plugin\Field\FieldType\LinkItem $projectLink */
     $projectLink = $variables['node']->field_link_to_project->offsetGet(0);
@@ -138,6 +142,14 @@ function _splashawards_preprocess_nomination_node($variables) {
 
     $link = \Drupal\Core\Link::fromTextAndUrl(\Drupal::translation()->translate('Weiterlesen'), $url);
 
+    if($customerLogoFile) {
+        $customer_logo_url = file_create_url($customerLogoFile->getFileUri());
+        $customer_logo_alt = $customerLogoAltText->getString();
+    } else {
+        $customer_logo_url = '';
+        $customer_logo_alt = '';
+    }
+
     $renderData = array(
         'bodyFull' => $bodyValue['value'],
         'title' => $title,
@@ -145,8 +157,8 @@ function _splashawards_preprocess_nomination_node($variables) {
         'subTitle' => is_null($subTitle) ? '' : $subTitle->getString(),
         'category' => $term->getName(),
         'nominationCategory' => $entityReference->getString(),
-        'customerLogoUrl' => file_create_url($customerLogoFile->getFileUri()),
-        'customerLogoAlt' => $customerLogoAltText->getString(),
+        'customerLogoUrl' => $customer_logo_url,
+        'customerLogoAlt' => $customer_logo_alt,
         'projectLink' => file_create_url($projectLink->getUrl()->getUri()),
         'projectName' => $projectName->getString(),
         'screenshots' => $screenshots,

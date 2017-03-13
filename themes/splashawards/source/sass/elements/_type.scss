@@ -37,6 +37,8 @@ h5 {
 }
 
 .page-header {
-  border: none; 
+  border: none;
+} 
+.path-frontpage .page-header {
   padding-left: $grid-gutter-width/2;
 }

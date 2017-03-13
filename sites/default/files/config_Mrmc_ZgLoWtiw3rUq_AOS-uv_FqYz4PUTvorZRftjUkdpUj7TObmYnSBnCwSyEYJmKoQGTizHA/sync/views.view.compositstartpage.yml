@@ -164,7 +164,12 @@ display:
           plugin_id: bundle
       sorts: {  }
       title: CompositStartPage
-      header: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          plugin_id: text_custom
       footer: {  }
       empty: {  }
       relationships: {  }
@@ -273,6 +278,8 @@ display:
         filter_groups: false
         style: false
         row: false
+        footer: false
+        header: false
       filters:
         status:
           value: '1'
@@ -385,6 +392,31 @@ display:
         options:
           relationship: none
           view_mode: teaser
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: "<div class=\"categories-and-rules\" id=\"categories-and-rules\">\n<h4><a href=\"/node/28\">Beschreibung Kategorien</a></h4>\n<h4><a href=\"/node/66\">Spielregeln</a></h4>\n</div>"
+          plugin_id: text_custom
+      block_description: Nominierungen
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: '<h2 class="block-title">Nominierungen</h2>'
+          plugin_id: text_custom
     cache_metadata:
       max-age: -1
       contexts:
@@ -459,6 +491,84 @@ display:
       defaults:
         filters: false
         filter_groups: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_4:
+    display_plugin: block
+    id: block_4
+    display_title: 'Jury Frontpage'
+    position: 4
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      header: {  }
+      defaults:
+        header: false
+        filters: false
+        filter_groups: false
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: '68'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: nid
+          plugin_id: numeric
       filter_groups:
         operator: AND
         groups:

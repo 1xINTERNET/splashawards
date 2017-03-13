@@ -12,6 +12,8 @@
  * @param array $variables
  * @return array
  */
+use Drupal\image\Entity\ImageStyle;
+
 function _splashawards_preprocess_judge_node($variables) {
     /** @var \Drupal\file\Plugin\Field\FieldType\FileItem $judgePhotoFileItem */
     $judgePhotoFileItem = $variables['node']->field_judge_photo->offsetGet(0);
@@ -75,7 +77,11 @@ function _splashawards_preprocess_nomination_node($variables) {
     }
 
     /** @var \Drupal\link\Plugin\Field\FieldType\LinkItem $projectLink */
-    $projectLink = $variables['node']->field_link_to_project->offsetGet(0);
+    if($variables['node']->field_link_to_project->offsetGet(0)) {
+        $projectLink = $variables['node']->field_link_to_project->offsetGet(0);
+    } else {
+        $projectLink = '';
+    }
 
     /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $nominationCategoryItem */
     $nominationCategoryItem = $variables['node']->field_nomination_category->offsetGet(0);
@@ -125,12 +131,12 @@ function _splashawards_preprocess_nomination_node($variables) {
         $screenshotImageID = $screenshotImage->get('target_id');
         /** @var \Drupal\file\Entity\File $customerLogoFile */
         $screenshotFile = \Drupal\file\Entity\File::load($screenshotImageID->getCastedValue());
-
+        $screenshotUrl = $screenshotFile->getFileUri();
         /** @var \Drupal\Core\TypedData\Plugin\DataType\StringData $alt */
         $alt = $screenshotImage->get('alt');
 
         $teaserScreenshots[] = array(
-            'src' => file_create_url($screenshotFile->getFileUri()),
+            'src' => ImageStyle::load('teaser_200x200_')->buildUrl($screenshotUrl),
             'alt' => $alt->getString()
         );
     }
@@ -150,6 +156,12 @@ function _splashawards_preprocess_nomination_node($variables) {
         $customer_logo_alt = '';
     }
 
+    if($projectLink) {
+        $projectLink = file_create_url($projectLink->getUrl()->getUri());
+    } else {
+        $projectLink = '';
+    }
+
     $renderData = array(
         'bodyFull' => $bodyValue['value'],
         'title' => $title,
@@ -159,7 +171,7 @@ function _splashawards_preprocess_nomination_node($variables) {
         'nominationCategory' => $entityReference->getString(),
         'customerLogoUrl' => $customer_logo_url,
         'customerLogoAlt' => $customer_logo_alt,
-        'projectLink' => file_create_url($projectLink->getUrl()->getUri()),
+        'projectLink' => $projectLink,
         'projectName' => $projectName->getString(),
         'screenshots' => $screenshots,
         'teaserScreenshots' => $teaserScreenshots,

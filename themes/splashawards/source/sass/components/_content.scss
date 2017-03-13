@@ -1,6 +1,6 @@
 // Bottom borders: 
 header, 
-.block-views-blockcompositstartpage-block-1, 
+.block-views-blockcompositstartpage-block-4, 
 .block-views-blockdisplay-other-sponsors-block-1 {
   border-bottom: 4px solid rgba($xi-gray-light, 0.6);
 }
@@ -20,7 +20,8 @@ header,
 
 
 // Sections - NO padding bottom
-.block-views-blockcompositstartpage-block-3, 
+.block-views-blockcompositstartpage-block-3,
+.block-views-blockcompositstartpage-block-1, 
 .block-views-blocknomination-categories-block-1,
 .block-views-blockdisplay-goldsponsors-block-1 {
   padding-bottom: 0; 
@@ -48,4 +49,24 @@ section {
 
 .block-title {
   text-align: center; 
+}
+
+.region-highlighted article {
+  padding: 0; 
+}
+
+.jury {
+  padding-top: $grid-gutter-width*2;
+  .row > div {
+    padding-bottom: $grid-gutter-width*2;
+  }
+  .portrait {
+    float: left; 
+    padding-right: $grid-gutter-width; 
+  }
+  .jury-member {
+    em {
+      display: block; 
+    }
+  }
 }

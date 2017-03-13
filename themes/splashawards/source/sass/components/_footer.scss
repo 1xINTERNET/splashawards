@@ -1,0 +1,12 @@
+.footer {
+  border: none; 
+  margin-top: 0; 
+  .menu li {
+    display: inline-block; 
+    a:hover,
+    a:active, 
+    a:focus {
+      background: transparent; 
+    }
+  }
+}

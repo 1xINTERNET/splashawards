@@ -1,5 +1,8 @@
 db.sql
+*.sql
 *.tar.gz
 *.log
 .idea/
 .vagrant/
+sites/default/files/*
+sites/default/settings.php

@@ -32,6 +32,10 @@ header,
   margin-bottom: 0;
 }
 
+.main-container {
+  padding-top: $line-height-computed*2; 
+}
+
 .main-container >section {
   padding: 0; 
 }

@@ -1,4 +1,5 @@
 db.sql
+*.sql
 *.tar.gz
 *.log
 .idea/

@@ -4,8 +4,14 @@
   }
   &__projectname {
     .h2 {
-      margin: 0; 
+      margin: 0;
+      @include smaller-than($screen-sm){
+        font-size: $font-size-h4;
+      } 
     }
+  }
+  &__project-url {
+    margin-bottom: $line-height-computed*2; 
   }
   .project-link-button {
     @include make-button-light($xi-green, $xi-white);
@@ -16,6 +22,18 @@
     .field--item {
       margin-bottom: $line-height-computed*2; 
     }
+    img {
+      margin: auto; 
+    }
+    .slick-dots {
+      top: -$line-height-computed*2; 
+      li button:before {
+        font-size: $font-size-small;
+      }
+    }
+  }
+  &__customer-logo {
+    margin-top: $line-height-computed*2; 
   }
 }
 

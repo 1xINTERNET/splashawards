@@ -4,6 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.sponsor.field_is_gold_sponsor
+    - field.field.node.sponsor.field_link_to_sponsor_page
+    - field.field.node.sponsor.field_sponsor_logo
+    - field.field.node.sponsor.field_sponsor_logo_alt_text
     - node.type.sponsor
   module:
     - user
@@ -14,4 +18,9 @@ mode: teaser
 content:
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_is_gold_sponsor: true
+  field_link_to_sponsor_page: true
+  field_sponsor_logo: true
+  field_sponsor_logo_alt_text: true
+  langcode: true

@@ -11,14 +11,14 @@ dependencies:
 id: views_block__display_goldsponsors_block_1
 theme: splashawards
 region: content
-weight: -6
+weight: -7
 provider: null
 plugin: 'views_block:display_goldsponsors-block_1'
 settings:
   id: 'views_block:display_goldsponsors-block_1'
-  label: ''
+  label: Gold-Sponsoren
   provider: views
   label_display: visible
-  views_label: ''
+  views_label: Gold-Sponsoren
   items_per_page: none
 visibility: {  }

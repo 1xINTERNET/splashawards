@@ -28,4 +28,5 @@ content:
     third_party_settings: {  }
     type: file_default
 hidden:
+  langcode: true
   links: true

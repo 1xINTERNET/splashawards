@@ -7,3 +7,13 @@ theme-assets:
       public/css/style.css: {}
   js:
     public/js/bundle.js: {}
+
+slick-js:
+  version: 1.6.0
+  css:
+    theme:
+      '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css': { type: external, minified: true }
+      '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css': { type: external, minified: true }
+
+  js:
+    '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js': { type: external, minified: true }

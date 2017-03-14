@@ -5,6 +5,16 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.nomination.body
+    - field.field.node.nomination.field_company_logo
+    - field.field.node.nomination.field_customer_logo
+    - field.field.node.nomination.field_is_winner
+    - field.field.node.nomination.field_link_to_project
+    - field.field.node.nomination.field_nomination_category
+    - field.field.node.nomination.field_nomination_subtitle
+    - field.field.node.nomination.field_nomination_teaser_text
+    - field.field.node.nomination.field_projectname
+    - field.field.node.nomination.field_teaser_website_screenshots
+    - field.field.node.nomination.field_website_screenshots
     - node.type.nomination
   module:
     - text
@@ -17,10 +27,29 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 1
     settings:
       trim_length: 600
     third_party_settings: {  }
+  field_nomination_teaser_text:
+    type: text_trimmed
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
   links:
-    weight: 100
-hidden: {  }
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_company_logo: true
+  field_customer_logo: true
+  field_is_winner: true
+  field_link_to_project: true
+  field_nomination_category: true
+  field_nomination_subtitle: true
+  field_projectname: true
+  field_teaser_website_screenshots: true
+  field_website_screenshots: true
+  langcode: true

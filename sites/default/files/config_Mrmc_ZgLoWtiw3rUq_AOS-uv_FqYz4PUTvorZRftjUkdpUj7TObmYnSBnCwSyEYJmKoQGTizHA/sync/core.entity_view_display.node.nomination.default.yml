@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.nomination.body
+    - field.field.node.nomination.field_company_logo
     - field.field.node.nomination.field_customer_logo
     - field.field.node.nomination.field_is_winner
     - field.field.node.nomination.field_link_to_project
@@ -30,11 +31,19 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_company_logo:
+    weight: 114
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_customer_logo:
     weight: 102
     label: hidden
     settings:
-      image_style: ''
+      image_style: medium
       image_link: ''
     third_party_settings: {  }
     type: image
@@ -52,17 +61,17 @@ content:
     label: hidden
     settings:
       trim_length: 80
+      target: _blank
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
     third_party_settings: {  }
     type: link_separate
   field_nomination_category:
     weight: 104
     label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
   field_nomination_subtitle:
@@ -102,4 +111,5 @@ content:
     third_party_settings: {  }
     type: image
 hidden:
+  langcode: true
   links: true

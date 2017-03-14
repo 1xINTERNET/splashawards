@@ -1,7 +1,7 @@
 const jQuery = require('jquery');
 const Bootstrap = require('bootstrap-sass');
 const jQueryOnce = require('jquery-once');
-const Slick = require('slick-carousel');
+//const Slick = require('slick-carousel');
 
 (function ($, Drupal) {
     Drupal.behaviors.splashawards = {
@@ -11,8 +11,6 @@ const Slick = require('slick-carousel');
                     infinite: true,
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    swipe: false,
-                    touchMove: false,
                     autoplay: true,
                     arrows: false,
                     autoplaySpeed: 2000
@@ -23,9 +21,9 @@ const Slick = require('slick-carousel');
 
             if (jQuery(context).find(parentTeaserSelector + ' select').length > 0) {
                 var $menu = jQuery('<ul>'),
-                    dataKey = 'category-tid',
-                    $submitButton = jQuery(context).find(parentTeaserSelector + ' .form-actions .js-form-submit'),
-                    menuItemSelectedClass = 'selected';
+                dataKey = 'category-tid',
+                $submitButton = jQuery(context).find(parentTeaserSelector + ' .form-actions .js-form-submit'),
+                menuItemSelectedClass = 'selected';
 
                 $menu.toggleClass('nomination-category-menu js-nomination-category-menu');
                 jQuery(context).find(parentTeaserSelector + ' select').parent().append($menu);
@@ -33,8 +31,8 @@ const Slick = require('slick-carousel');
                 // reading the select-options creating the menu-list based on the their content
                 jQuery(context).find(parentTeaserSelector + ' select option').each(function (position, element) {
                     var tid = element.value,
-                        categoryName = element.innerText,
-                        $listElement = jQuery('<li>');
+                    categoryName = element.innerText,
+                    $listElement = jQuery('<li>');
 
                     // mark the menu-representing the selected option as selected
                     if(jQuery(element).is(':selected')) {
@@ -55,10 +53,25 @@ const Slick = require('slick-carousel');
                     jQuery(context).find(
                         parentTeaserSelector + ' select option[value=' +
                         jQuery(event.target).data(dataKey) + ']'
-                    ).selected();
+                        ).selected();
                     $submitButton.click();
                 });
             }
         }
     };
+
+    Drupal.behaviors.nominationSlider = {
+        attach: function (context, settings) {
+            jQuery(context).find('.nomination-full__content .field--name-field-website-screenshots').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                arrows: true,
+                dots: true,
+                autoplaySpeed: 4000
+            });
+        }
+    };
+
 })(jQuery, window.Drupal);

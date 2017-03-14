@@ -38,15 +38,15 @@
         }
 
         .nomination-screenshots-slider {
-          width: 110px;
+          //width: 110px;
           margin-left: auto;
           margin-right: auto;
           list-style: none;
           padding: 0; 
 
           img {
-            max-width: 100px;
-            max-height: 350px;
+            max-width: 100%;
+            margin: auto;
           }
         }
         .readmore-small {
@@ -58,5 +58,20 @@
         }
       }
     }
+  }
+  .categories-and-rules {
+    text-align: center;
+    padding-top: $grid-gutter-width;
+    margin: $grid-gutter-width*2;
+    border-top: 1px solid rgba($xi-gray-light, 0.6);
+    h4 {
+      display: inline-block;
+      @include larger-than($screen-sm) {
+        margin: 0 $grid-gutter-width;
+      }
+    }
+  }
+  .block-title {
+    margin-bottom: $grid-gutter-width*3; 
   }
 }

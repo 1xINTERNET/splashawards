@@ -32,6 +32,11 @@ content:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
     weight: 5

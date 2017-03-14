@@ -78,7 +78,7 @@
     <div class="row">
       <div class="nomination-full__nominator col-sm-6">
         <h4>{{ 'Submitted by:'|t }}</h4>
-        {{ content.field_customer_logo }}      
+        {{ content.field_company_logo }}      
       </div>
       <div class="nomination-full__projectname col-sm-6">
         <h4>{{ 'Projectname:'|t }}</h4>
@@ -98,6 +98,12 @@
     <div class="nomination-full__content">
       {{ content.field_website_screenshots }}
       {{ content.body }}
+      {% if content.field_customer_logo|render|trim is not empty %}
+        <div class="nomination-full__customer-logo">
+          <h4>{{ 'Customer logo:'|t }}</h4>
+          {{ content.field_customer_logo }}  
+        </div>
+      {% endif %}    
     </div>
   </div>
 </article>

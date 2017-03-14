@@ -1,8 +1,11 @@
-db.sql
-*.sql
-*.tar.gz
-*.log
-.idea/
-.vagrant/
+# Ignore settings and files
 /sites/default/settings.php
 /sites/default/files/*
+
+# Exclude modules and themes managed by compser
+modules/contrib
+themes/contrib
+
+# Ignore development files
+.idea/
+.vagrant/

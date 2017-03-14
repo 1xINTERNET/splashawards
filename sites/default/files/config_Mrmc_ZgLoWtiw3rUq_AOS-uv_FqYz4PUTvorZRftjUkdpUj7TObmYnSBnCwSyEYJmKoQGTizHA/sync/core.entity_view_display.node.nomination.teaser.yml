@@ -52,3 +52,4 @@ hidden:
   field_projectname: true
   field_teaser_website_screenshots: true
   field_website_screenshots: true
+  langcode: true

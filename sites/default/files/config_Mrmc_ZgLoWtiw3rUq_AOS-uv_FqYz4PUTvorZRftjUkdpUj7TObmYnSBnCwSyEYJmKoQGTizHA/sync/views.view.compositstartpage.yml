@@ -402,7 +402,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: "<div class=\"categories-and-rules\" id=\"categories-and-rules\">\n<h4><a href=\"/node/28\">Beschreibung Kategorien</a></h4>\n<h4><a href=\"/node/66\">Spielregeln</a></h4>\n</div>"
+          content: "<div class=\"categories-and-rules\" id=\"categories-and-rules\">\n<h4><a href=\"/kategorien\">Beschreibung Kategorien</a></h4>\n<h4><a href=\"/spielregeln\">Spielregeln</a></h4>\n</div>"
           plugin_id: text_custom
       block_description: Nominierungen
       header:

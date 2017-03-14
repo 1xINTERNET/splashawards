@@ -16,9 +16,9 @@ provider: null
 plugin: 'views_block:display_other_sponsors-block_1'
 settings:
   id: 'views_block:display_other_sponsors-block_1'
-  label: ''
+  label: 'Andere Sponsoren'
   provider: views
   label_display: visible
-  views_label: ''
+  views_label: 'Andere Sponsoren'
   items_per_page: none
 visibility: {  }

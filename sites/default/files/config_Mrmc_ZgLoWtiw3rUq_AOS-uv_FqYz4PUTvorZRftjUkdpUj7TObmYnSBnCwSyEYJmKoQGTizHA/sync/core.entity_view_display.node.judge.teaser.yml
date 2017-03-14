@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.judge.field_judge_company_position
+    - field.field.node.judge.field_judge_photo
     - node.type.judge
   module:
     - user
@@ -14,4 +16,7 @@ mode: teaser
 content:
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_judge_company_position: true
+  field_judge_photo: true
+  langcode: true

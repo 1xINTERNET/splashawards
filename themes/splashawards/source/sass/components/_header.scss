@@ -1,0 +1,43 @@
+.path-frontpage header {
+  background-image: url(../../images/bg-splash-dark-comp.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 70vh; 
+  color: $xi-white;
+  h1 {
+    color: $xi-white;
+    font-size: 3em; 
+  }
+  section {
+    padding: $grid-gutter-width; 
+  }
+}
+.logo {
+  float: none !important;
+  img {
+    height: auto;
+    @include larger-than($screen-sm) {
+      width: 70%;
+    }
+  }
+}
+
+.header-logo {
+  padding-bottom: $grid-gutter-width; 
+}
+
+.section-highlighted {
+  margin-top: $grid-gutter-width*2;
+  .row {
+    @include larger-than($screen-sm) {
+      display: flex; 
+      align-items: center;
+    }
+  }
+  &__content {
+    .container {
+      width: 100%; 
+    }
+  }
+}

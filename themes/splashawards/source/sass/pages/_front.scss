@@ -1,0 +1,19 @@
+.path-frontpage {
+  h2, h3 {
+    text-align: center;
+  }
+  .main-container {
+    .links {
+      text-align: center; 
+    }
+    .content {
+      margin: auto; 
+      @include larger-than($screen-sm) {
+        max-width: 80%; 
+      }
+    }
+  }
+}
+.path-frontpage .block-views-blockdisplay-goldsponsors-block-1 {
+  margin-top: 0;
+}

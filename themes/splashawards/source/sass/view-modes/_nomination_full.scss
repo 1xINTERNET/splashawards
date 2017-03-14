@@ -22,6 +22,15 @@
     .field--item {
       margin-bottom: $line-height-computed*2; 
     }
+    img {
+      margin: auto; 
+    }
+    .slick-dots {
+      top: -$line-height-computed*2; 
+      li button:before {
+        font-size: $font-size-small;
+      }
+    }
   }
   &__customer-logo {
     margin-top: $line-height-computed*2; 

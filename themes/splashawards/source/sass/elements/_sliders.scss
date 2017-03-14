@@ -1,5 +1,17 @@
-.slick-prev, .slick-next {
-  &::before {
-    color: $xi-gray-light; 
+
+.slick-dots {
+  top: -$line-height-computed*2; 
+  li button:before {
+    font-size: $font-size-base;
+  }
+}
+
+.slick-slider {
+  .slick-prev, .slick-next {
+    top: -$line-height-computed; 
+    z-index: 9999;
+    &:before {
+      color: $xi-gray-light; 
+    }
   }
 }

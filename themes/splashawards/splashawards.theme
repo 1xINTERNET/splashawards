@@ -207,8 +207,12 @@ function _splashawards_preprocess_sponsor_node($variables) {
     $logoFileArray = $logoFileItem->view();
     /** @var \Drupal\file\Entity\File $logoFile */
     $logoFile = $logoFileArray["#file"];
-    /** @var string $logoURL */
-    $logoURL =  file_create_url($logoFile->getFileUri());
+    if($logoFile) {
+      /** @var string $logoURL */
+      $logoURL =  file_create_url($logoFile->getFileUri());
+    } else {
+      $logoURL = '';
+    }
 
     /** @var \Drupal\Core\Field\Plugin\Field\FieldType\StringItem $loglAltTextItem */
     $loglAltTextItem = $variables['node']->field_sponsor_logo_alt_text->offsetGet(0);

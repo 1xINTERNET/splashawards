@@ -21,3 +21,4 @@ regions:
 
 libraries:
   - 'splashawards/theme-assets'
+  - 'splashawards/slick-js'

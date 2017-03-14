@@ -98,7 +98,7 @@
     <div class="nomination-full__content">
       {{ content.field_website_screenshots }}
       {{ content.body }}
-      {% if content.field_customer_logo %}
+      {% if content.field_customer_logo|render|trim is not empty %}
         <div class="nomination-full__customer-logo">
           <h4>{{ 'Customer logo:'|t }}</h4>
           {{ content.field_customer_logo }}  

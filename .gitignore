@@ -3,3 +3,5 @@ db.sql
 *.log
 .idea/
 .vagrant/
+/sites/default/settings.php
+/sites/default/files/*

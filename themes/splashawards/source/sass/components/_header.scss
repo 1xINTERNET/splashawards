@@ -17,6 +17,7 @@
   float: none !important;
   img {
     height: auto;
+    max-width: 100%; 
     @include larger-than($screen-sm) {
       width: 70%;
     }

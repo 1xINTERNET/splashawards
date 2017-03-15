@@ -14,4 +14,13 @@
       color: $xi-gray-light; 
     }
   }
+
+  @include smaller-than($screen-xs) {
+    .slick-prev {
+      left: 0;
+    }
+    .slick-next {
+      right: 0; 
+    }
+  }
 }

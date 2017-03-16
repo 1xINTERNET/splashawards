@@ -71,10 +71,20 @@
  *
  * @ingroup themeable
  */
-#}
+ #}
 
-<article{{ attributes }}>
-  <div class="nomination-full">
+ <article{{ attributes }}>
+   <div class="nomination-full">
+    {% if node.field_is_winner.value == '1' %}
+      <div class="nomination-winner">
+        <div class="nomination-winner-badge">
+          <img src="/themes/splashawards/images/badge.png" alt="winner badge" class="img-responsive">
+        </div>
+        <div class="nomination-winner-text">
+          {{ content.field_is_winner }}
+        </div>
+      </div>
+    {% endif %}
     <div class="row">
       <div class="nomination-full__nominator col-sm-6">
         <h4>{{ 'Submitted by:'|t }}</h4>

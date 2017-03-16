@@ -72,8 +72,17 @@
  * @ingroup themeable
  */
 #}
+
 <article data-nomination-category="{{ splashawards.nomination.category }}" class="nomination-teaser">
     <div{{ content_attributes }}>
+        {% if node.field_is_winner.value == '1' %}
+            <div class="nomination-winner-text">
+                {{ content.field_is_winner }}
+            </div>
+            <div class="nomination-winner-badge">
+                <img src="/themes/splashawards/images/badge.png" alt="winner badge" class="img-responsive">
+            </div>
+        {% endif %}
         <h4>{{ splashawards.nomination.title }}</h4>
         <h5>{{ splashawards.nomination.subTitle }}</h5>
         <ul class="nomination-screenshots-slider">

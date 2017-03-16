@@ -71,4 +71,22 @@
   .block-title {
     margin-bottom: $grid-gutter-width*3; 
   }
+  .nomination-winner-text {
+    margin: -$grid-gutter-width/2; 
+    margin-bottom: $grid-gutter-width;
+    padding: $grid-gutter-width/10; 
+    border-top-left-radius: $border-radius-large;
+    border-top-right-radius: $border-radius-large;
+    text-align: center; 
+    background: $xi-green; 
+    color: $xi-white; 
+    text-transform: uppercase; 
+    font-weight: bold; 
+  }
+  .nomination-winner-badge {
+    width: 3.5em; 
+    position: absolute; 
+    right: 0; 
+    top: -$grid-gutter-width/5; 
+  }
 }
